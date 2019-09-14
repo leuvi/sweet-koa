@@ -1,5 +1,5 @@
 {
-  "name": "sweetfullstack",
+  "name": "cv",
   "version": "1.0.0",
   "description": "基于koa2和vue的前后端分离架构",
   "author": "苹果熊 <528046@qq.com>",
@@ -8,7 +8,8 @@
   "scripts": {
     "start": "cross-env node_env=dev run_env=local node server/app.js",
     "serve": "cross-env node_env=prod run_env=online port=3072 node server/app.js",
-    "build": "./node_modules/.bin/webpack --env.prod --config ./config/"
+    "build": "./node_modules/.bin/webpack --env.prod --config ./config/",
+    "zip": "node zip.js"
   },
   "port": "3071",
   "license": "ISC",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "archiver": "^3.1.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.0.0",
@@ -42,6 +44,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "moment": "^2.24.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "style-loader": "^1.0.0",
     "style-resources-loader": "^1.2.1",
