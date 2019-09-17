@@ -31,7 +31,7 @@ zipFile.forEach(file => {
   if (/\//g.test(file)) {
     zip.directory(file, file)
   } else {
-    zip.append(fs.createReadStream(zipName), {
+    zip.file(file, {
       name: file
     })
   }

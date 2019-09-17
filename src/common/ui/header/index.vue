@@ -1,10 +1,10 @@
 <template>
   <header :style="{height: page == 'home' ? '15rem' : '6rem'}">
     <div class="home-header" v-if="page == 'home'">
-      <div class="avatar">
+      <div class="avatar" @click="test">
         <img :src="require('@images/avatar.jpg')" alt />
       </div>
-      <div class="name">苹果熊</div>
+      <div class="name" @click="test2">苹果熊</div>
       <div class="location">
         <i class="el-icon-location"></i>
         <span>Chengdu, China</span>
@@ -32,6 +32,44 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    test() {
+      // this.$axios({
+      //   url: '/userpost',
+      //   method: 'post',
+      //   baseURL: 'proxy',
+      //   data: {
+      //     name: 'postname'
+      //   }
+      // })
+      // this.$axios({
+      //   url: '/userget',
+      //   method: 'get',
+      //   baseURL: 'proxy',
+      //   params: {
+      //     name: 'getname'
+      //   }
+      // })
+      this.$axios.proxy({
+        method: "get",
+        url: "/api/list",
+        data: {
+          name: "lxh",
+          age: 30
+        }
+      });
+    },
+    test2() {
+      this.$axios.proxy({
+        method: "post",
+        url: "/api/list",
+        //jsonHeader: true,
+        data: {
+          name: "lxh",
+          age: 30,
+          list: [1, 2, 3]
+        }
+      });
     }
   }
 };
@@ -75,7 +113,7 @@ export default {
     margin-top: 1.5rem;
     font-size: 1.2rem;
     em {
-      font-size: .6rem;
+      font-size: 0.6rem;
       margin-left: 5px;
     }
   }

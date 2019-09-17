@@ -11,14 +11,17 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: process.env.NODE_ENV == 'development' ? 'hash' : 'history',
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition ? savedPosition : {
+      x: 0,
+      y: 0
+    }
+  },
 })
-//console.log(process.env.NODE_ENV)
 
 //路由权限控制 - 进入前
 // router.beforeEach((to, from, next) => {
-//   next({
-//     path: store.state.app.DEFAULT_ROUTE
-//   })
+//   next()
 // })
 
 //路由权限控制 - 进入后

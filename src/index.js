@@ -9,14 +9,20 @@ import * as directives from '@common/directive'
 
 import '@assets/less/index.less'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'animate.css'
 
 Vue.use(ElementUI)
 
 Vue.prototype.$axios = axios
+Vue.prototype.$axios.proxy = utils.proxy
 Vue.prototype.$utils = utils
 
 //axios请求拦截
 axios.interceptors.request.use(config => {
+  if (config.data) {
+    let configData = JSON.parse(JSON.stringify(config.data));
+    config.url += `?url=${configData.url}&time=${Date.now()}`;
+  }
   return config
 }, error => {
   return Promise.reject(error)

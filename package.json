@@ -6,7 +6,7 @@
   "homepage": "https://github.com/leuvi/koa",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env node_env=dev run_env=local node server/app.js",
+    "start": "cross-env node_env=dev run_env=local nodemon server/app.js",
     "serve": "cross-env node_env=prod run_env=online port=3072 node server/app.js",
     "build": "./node_modules/.bin/webpack --env.prod --config ./config/",
     "zip": "node zip.js"
@@ -14,6 +14,7 @@
   "port": "3071",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.7.2",
     "axios": "^0.19.0",
     "element-ui": "^2.12.0",
     "koa": "^2.8.1",
@@ -38,7 +39,9 @@
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.20.0",
     "ip": "^1.1.5",
+    "koa-connect": "^2.0.1",
     "koa-webpack-dev-middleware": "^2.0.2",
     "koa-webpack-hot-middleware": "^1.0.3",
     "less": "^3.10.3",
@@ -46,6 +49,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "moment": "^2.24.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "request": "^2.88.0",
     "style-loader": "^1.0.0",
     "style-resources-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
