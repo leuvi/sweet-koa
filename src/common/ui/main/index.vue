@@ -11,8 +11,8 @@
 .main {
   .top {
     background: #fff;
-    height: 40px;
-    border-top-left-radius: 50px;
+    height: 1.7rem;
+    border-top-left-radius: 1.7rem;
     border-top-right-radius: 50px;
   }
   .content {

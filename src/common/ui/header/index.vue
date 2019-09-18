@@ -34,22 +34,6 @@ export default {
       this.$router.go(-1);
     },
     test() {
-      // this.$axios({
-      //   url: '/userpost',
-      //   method: 'post',
-      //   baseURL: 'proxy',
-      //   data: {
-      //     name: 'postname'
-      //   }
-      // })
-      // this.$axios({
-      //   url: '/userget',
-      //   method: 'get',
-      //   baseURL: 'proxy',
-      //   params: {
-      //     name: 'getname'
-      //   }
-      // })
       this.$axios.proxy({
         method: "get",
         url: "/api/list",
@@ -63,7 +47,10 @@ export default {
       this.$axios.proxy({
         method: "post",
         url: "/api/list",
-        //jsonHeader: true,
+        jsonHeader: true,
+        header: {
+          Authorization: 'abcdefg12345'
+        },
         data: {
           name: "lxh",
           age: 30,
