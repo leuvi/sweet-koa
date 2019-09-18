@@ -1,6 +1,7 @@
-# 基于koa2和vue的前后端分离架构
+## 基于koa2和vue的前后端分离架构
 
-* 本地api接口用axios拦截发送/proxy?url=****请求和请求体，
+
+本地api接口用axios拦截发送/proxy?url=****请求和请求体
 ```javascript
 axios.interceptors.request.use(config => {
   if (config.data) {
@@ -11,7 +12,7 @@ axios.interceptors.request.use(config => {
 })
 ```
 
-* 后端/proxy路由用proxyApi方法跨域获取第三方接口
+后端/proxy路由用proxyApi方法跨域获取第三方接口
 ```javascript
 router.post('/proxy', async (ctx, next) => {
   const params = ctx.request.body
