@@ -3,7 +3,7 @@
 
 # 生产环境
 /dist
-/server
+#/server
 
 # 日志文件
 /log
